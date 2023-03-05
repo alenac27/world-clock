@@ -21,6 +21,17 @@ function updateTime() {
       "h:mm:ss [<small>]A<[/small>]"
     )}`;
   }
+  let montevideoElement = document.querySelector("#montevideo");
+  if (montevideoElement) {
+    let montevideoDateElement = montevideoElement.querySelector(".date");
+    let montevideoTimeElement = montevideoElement.querySelector(".time");
+    let montevideoTime = moment().tz("America/Montevideo");
+
+    montevideoDateElement.innerHTML = moment().format("MMMM Do YYYY");
+    montevideoTimeElement.innerHTML = `${montevideoTime.format(
+      "h:mm:ss [<small>]A<[/small>]"
+    )}`;
+  }
 }
 
 function updateCity(event) {
